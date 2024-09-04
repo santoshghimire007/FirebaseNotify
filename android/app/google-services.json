@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "799928512642",
+    "project_id": "notify-bb15c",
+    "storage_bucket": "notify-bb15c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799928512642:android:93740294fbf94ed208049b",
+        "android_client_info": {
+          "package_name": "com.example.firebase_notify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBMCiY8F1B93QX36MjG2ktLyLoyKRSABg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

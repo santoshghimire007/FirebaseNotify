@@ -1,0 +1,38 @@
+buildscript {
+    ext {
+    kotlin_version = '2.0.20'
+}
+    repositories {
+        
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version" // Ensure this matches your AGP version
+        classpath 'com.google.gms:google-services:4.3.15' // Ensure this is the correct version
+        // Other classpath dependencies
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// Ensure the build directory settings are correct
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+
+// This line makes sure all projects are evaluated based on ':app'
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+// Define the clean task to remove build directories
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
