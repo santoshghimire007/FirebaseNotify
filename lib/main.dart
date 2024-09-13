@@ -1,4 +1,5 @@
-import 'package:firebase_notify/feature/notification/ui/pages/handle_notification.dart';
+import 'package:firebase_notify/app_router.dart';
+import 'package:firebase_notify/service/deep_link_service.dart';
 import 'package:firebase_notify/service/firebase_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -35,15 +36,24 @@ class _MyAppState extends State<MyApp> {
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
   @override
+  void initState() {
+    super.initState();
+    initUniLinks();
+  }
+
+ 
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      onGenerateRoute: AppRouter.generateRoute,
       navigatorKey: navigatorKey,
       title: 'NOTIFICATION FIREBASE',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false,
       ),
-      home: const HandleNotification(),
+      // home: const HandleNotification(),
     );
   }
 }

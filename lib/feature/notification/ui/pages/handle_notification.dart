@@ -21,14 +21,15 @@ class _HandleNotificationState extends State<HandleNotification> {
       appBar: AppBar(
         title: const Text("NOTIFICATION"),
       ),
-      body: const Column(
+      body: Column(
         children: <Widget>[
-          Center(
+          const Center(
             child: Text(
               "HEY",
               style: TextStyle(color: Colors.amber),
             ),
-          )
+          ),
+          ElevatedButton(onPressed: () {}, child: const Text("Press"))
         ],
       ),
     );
